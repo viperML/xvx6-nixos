@@ -5,6 +5,11 @@
       inputs.nix.follows = "nixpkgs";
     };
 
+    nur = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/NUR";
+    };
+
     emacs.url = "github:nix-community/emacs-overlay";
     nix.url = "nixpkgs/nixos-unstable";
   };
@@ -13,6 +18,7 @@
     emacs,
     self,
     nix,
+    nur,
     hm,
     ...
   } @ inputs: let
@@ -32,7 +38,7 @@
         }
 
         {
-          nixpkgs.overlays = [emacs.overlay];
+          nixpkgs.overlays = [emacs.overlay nur.overlay];
         }
 
         ./system

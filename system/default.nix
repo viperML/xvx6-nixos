@@ -16,4 +16,9 @@
     extraOptions = "experimental-features = nix-command flakes";
     package = pkgs.nixUnstable;
   };
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowBroken = true;
+  };
 }

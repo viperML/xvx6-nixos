@@ -3,10 +3,8 @@
   pkgs,
   ...
 }: {
-  imports = [./hardware-configuration.nix];
-
+  environment.systemPackages = [pkgs.git];
   i18n.defaultLocale = "en_US.UTF-8";
-  nixpkgs.config.allowUnfree = true;
   time.timeZone = "Asia/Karachi";
   system.stateVersion = "22.05";
   sound.enable = true;
@@ -113,7 +111,6 @@
       alejandra
       firefox
       sxhkd
-      git
     ];
 
     extraGroups = ["wheel"];

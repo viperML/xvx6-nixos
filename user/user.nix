@@ -4,10 +4,14 @@
   ...
 }: let
   conf-dir = "${config.home.homeDirectory}/.config/nixos";
+  zsh = import ./apps/zsh.nix;
+  ff = import ./apps/ff.nix;
 in {
   systemd.user.sessionVariables = {DISPLAY = ":0";}; # because of picom service
   programs = {
     home-manager.enable = true;
+    programs.zsh = zsh pkgs;
+    firefox = ff pkgs;
   };
 
   home.file = {
