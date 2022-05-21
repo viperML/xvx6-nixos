@@ -7,4 +7,4 @@ configuration has,
   
 now with -100% gurantee.
 
-I showed you my nixos configuration, pls respond.
+I showed you my nixos config, pls respond.
