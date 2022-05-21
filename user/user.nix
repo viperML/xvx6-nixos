@@ -10,13 +10,35 @@ in {
   systemd.user.sessionVariables = {DISPLAY = ":0";}; # because of picom service
   programs = {
     home-manager.enable = true;
-    programs.zsh = zsh pkgs;
     firefox = ff pkgs;
+    zsh = zsh pkgs;
   };
 
   home.file = {
-    ".config/berry".source =
-      config.lib.file.mkOutOfStoreSymlink "${conf-dir}/config/berry";
+    ".config/berry/autostart" = {
+      text = ''
+        #!/bin/sh
+
+        berryc border_width       0
+        berryc inner_border_width 0
+        berryc title_height       35
+        berryc edge_gap           30 30 30 30
+
+        berryc inner_focus_color   c9c1bd
+        berryc inner_unfocus_color 2c363c
+
+        berryc draw_text "false"
+        berryc smart_place "true"
+        berryc edge_lock   "true"
+
+        pgrep sxhkd || sxhkd -c "$HOME/.config/berry/sxhkdrc" &
+        picom &
+      '';
+
+      executable = true;
+    };
+
+    ".config/berry/sxhkdrc".source = config.lib.file.mkOutOfStoreSymlink "${conf-dir}/config/berry/sxhkdrc";
 
     ".emacs.d".source =
       config.lib.file.mkOutOfStoreSymlink "${conf-dir}/config/emacs";

@@ -95,11 +95,27 @@
         "type": "indirect"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1653136000,
+        "narHash": "sha256-VE2PJR1EO8QmTPyC5AJJxIb8YI+a8R4J+xwHvkB/pWg=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "6e0ba57d9579bfc2ff652cd7c4d725423f76a8c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "emacs": "emacs",
         "hm": "hm",
-        "nix": "nix"
+        "nix": "nix",
+        "nur": "nur"
       }
     }
   },

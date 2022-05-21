@@ -29,13 +29,25 @@
   };
 
   fonts = {
+    fonts = with pkgs; [
+      noto-fonts-emoji-blob-bin
+      material-design-icons
+      cozette
+    ];
+
     fontconfig = {
+      defaultFonts = {
+        monospace = ["Cozette"];
+        sansSerif = ["Cozette"];
+        serif = ["Cozette"];
+        emoji = ["Blobmoji"];
+      };
+
       useEmbeddedBitmaps = true;
       allowBitmaps = true;
     };
 
     fontDir.enable = true;
-    fonts = with pkgs; [scientifica];
   };
 
   boot = {
@@ -104,10 +116,7 @@
 
   users.users.agir = {
     packages = with pkgs; [
-      ((emacsPackagesFor emacsGit).emacsWithPackages (emacs28Packages: [
-        emacs28Packages.vterm
-      ]))
-
+      emacs-nox
       alejandra
       firefox
       sxhkd
