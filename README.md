@@ -20,7 +20,7 @@ mkdir -p /mnt/etc
 cd /mnt/etc
 git clone https://github.com/xvx6/nixos --depth 1
 cd nixos
-nix build --extra-experimental-features 'nix-command flakes' '.#nixosConfigurations.ephemeral.config.system.build.toplevel' && nixos-install --system ./result # You'll be prompted for password
+nixos-install --impure --flake /mnt/etc/nixos#ephemeral
 nixos-enter --root /mnt
 passwd agir # or replace configuration.nix's users.users.agir with your own username
 exit
