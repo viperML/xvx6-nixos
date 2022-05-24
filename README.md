@@ -9,9 +9,8 @@ now with -100% guarantee.
 
 #### installation
 while booted into a stable nixos live usb, make sure that you have:
-- disk partitioned
+- disk partitioned and mounted (check nixos manual)
 - internet connection
-- mounted accordingly
 
 once you've partitioned your disks and mounted your disks, run the following commands:
 ```bash
