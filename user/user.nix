@@ -39,9 +39,6 @@ in {
     };
 
     ".config/berry/sxhkdrc".source = config.lib.file.mkOutOfStoreSymlink "${conf-dir}/config/berry/sxhkdrc";
-
-    ".emacs.d".source =
-      config.lib.file.mkOutOfStoreSymlink "${conf-dir}/config/emacs";
   };
 
   services = {
