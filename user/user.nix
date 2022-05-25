@@ -4,6 +4,7 @@
   ...
 }: let
   conf-dir = "${config.home.homeDirectory}/.config/nixos";
+  vscode = import ./apps/vscode.nix;
   kitty = import ./apps/kitty.nix;
   git = import ./apps/git.nix;
   zsh = import ./apps/zsh.nix;
@@ -13,6 +14,7 @@ in {
   systemd.user.sessionVariables = {DISPLAY = ":0";}; # because of picom service
   programs = {
     home-manager.enable = true;
+    vscode = vscode pkgs;
     kitty = kitty pkgs;
     firefox = ff pkgs;
     git = git pkgs;
