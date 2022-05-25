@@ -38,7 +38,7 @@
         {
           nixpkgs.overlays = [
             nur.overlay
-            (import ./overlays)
+            # (import ./overlays)
           ];
         }
 

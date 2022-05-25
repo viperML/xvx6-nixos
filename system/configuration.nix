@@ -31,8 +31,8 @@
     fonts = with pkgs; [
       noto-fonts-emoji-blob-bin
       material-design-icons
-      apple-garamond
-      sarasa
+      (pkgs.callPackage ../pkgs/apple-garamond.nix {})
+      (pkgs.callPackage ../pkgs/sarasa.nix {})
       inter
     ];
 
