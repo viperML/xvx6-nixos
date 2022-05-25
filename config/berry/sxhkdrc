@@ -2,7 +2,7 @@
 
 # launch programs
 super + Return
-	alacritty
+	kitty
 
 super + r
 	rofi -show run
