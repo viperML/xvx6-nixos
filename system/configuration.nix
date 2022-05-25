@@ -3,7 +3,6 @@
   pkgs,
   ...
 }: {
-  environment.systemPackages = [pkgs.git];
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Asia/Karachi";
   system.stateVersion = "22.05";
@@ -32,13 +31,15 @@
     fonts = with pkgs; [
       noto-fonts-emoji-blob-bin
       material-design-icons
-      cozette
+      apple-garamond
+      sarasa
+      inter
     ];
 
     fontconfig = {
       defaultFonts = {
-        monospace = ["Cozette"];
-        sansSerif = ["Cozette"];
+        monospace = ["Sarasa Mono SC"];
+        sansSerif = ["Inter"];
         serif = ["Cozette"];
         emoji = ["Blobmoji"];
       };
@@ -114,7 +115,7 @@
     sudo.enable = false;
   };
 
-  users.users.agir = {
+  users.users.sarasa = {
     packages = with pkgs; [
       emacs-nox
       alejandra

@@ -21,7 +21,7 @@ git clone https://github.com/xvx6/nixos --depth 1
 cd nixos
 nixos-install --flake '.#ephemeral'
 nixos-enter --root /mnt
-passwd agir # or replace configuration.nix's users.users.agir with your own username
+passwd sarasa # or replace configuration.nix's users.users.sarasa with your own username
 exit
 reboot
 ```

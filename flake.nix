@@ -24,7 +24,7 @@
   } @ inputs: let
     system = "x86_64-linux";
     hostname = "ephemeral";
-    user = "agir";
+    user = "sarasa";
   in {
     nixosConfigurations.${hostname} = nix.lib.nixosSystem {
       modules = [
@@ -38,7 +38,7 @@
         }
 
         {
-          nixpkgs.overlays = [emacs.overlay nur.overlay];
+          nixpkgs.overlays = [emacs.overlay nur.overlay ./overlays];
         }
 
         ./system

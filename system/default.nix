@@ -6,7 +6,7 @@
   imports = [./configuration.nix ./hardware-configuration.nix];
   nix = {
     settings.auto-optimise-store = true;
-    settings.allowed-users = ["agir"];
+    settings.allowed-users = ["sarasa"];
     gc = {
       automatic = true;
       dates = "daily";
