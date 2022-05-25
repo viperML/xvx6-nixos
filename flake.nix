@@ -36,7 +36,10 @@
         }
 
         {
-          nixpkgs.overlays = [nur.overlay ./overlays];
+          nixpkgs.overlays = [
+            nur.overlay
+            (import ./overlays)
+          ];
         }
 
         ./system
