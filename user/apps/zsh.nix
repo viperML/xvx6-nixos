@@ -7,7 +7,7 @@ pkgs: {
 
   initExtra = ''
     PROMPT="%F{blue}%m %~%b "$'\n'"%(?.%F{green}%Bλ%b.%F{red}?) %f"
-    export EDITOR="emacs";
+    export EDITOR="code";
   '';
 
   shellAliases = {

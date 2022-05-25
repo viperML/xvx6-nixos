@@ -117,7 +117,8 @@
 
   users.users.sarasa = {
     packages = with pkgs; [
-      emacs-nox
+      gnome.nautilus
+      gnome.sushi
       alejandra
       firefox
       sxhkd

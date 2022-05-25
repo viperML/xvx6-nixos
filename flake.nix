@@ -10,12 +10,10 @@
       url = "github:nix-community/NUR";
     };
 
-    emacs.url = "github:nix-community/emacs-overlay";
     nix.url = "nixpkgs/nixos-unstable";
   };
 
   outputs = {
-    emacs,
     self,
     nix,
     nur,
@@ -38,7 +36,7 @@
         }
 
         {
-          nixpkgs.overlays = [emacs.overlay nur.overlay ./overlays];
+          nixpkgs.overlays = [nur.overlay ./overlays];
         }
 
         ./system
