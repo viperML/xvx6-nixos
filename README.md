@@ -8,19 +8,18 @@ muh nixos configuration(TM) now featuring:
 now with -100% guarantee.
 
 #### installation
-while booted into a stable nixos live usb, make sure that you have:
+once booted into an unstable nixos live usb obtained from https://releases.nixos.org, make sure that you have:
 - disk partitioned and mounted (check nixos manual)
 - internet connection
 
 once you've partitioned your disks and mounted your disks, run the following commands:
 ```bash
 sudo -i # get root privileges
-nix-shell -p nixFlakes nixUnstable # get flakes and unstable channel support
 mkdir -p /mnt/etc
 cd /mnt/etc
 git clone https://github.com/xvx6/nixos --depth 1
 cd nixos
-nixos-install --impure --flake /mnt/etc/nixos#ephemeral
+nixos-install --flake '.#ephemeral'
 nixos-enter --root /mnt
 passwd agir # or replace configuration.nix's users.users.agir with your own username
 exit
