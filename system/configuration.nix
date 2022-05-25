@@ -39,8 +39,8 @@
     fontconfig = {
       defaultFonts = {
         monospace = ["Sarasa Mono SC"];
+        serif = ["Apple Garamond"];
         sansSerif = ["Inter"];
-        serif = ["Cozette"];
         emoji = ["Blobmoji"];
       };
 
